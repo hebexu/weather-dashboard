@@ -1,0 +1,111 @@
+body
+{
+    margin: auto;
+    padding: auto;
+}
+
+
+textarea
+{
+    resize: none;
+    color: #191970;
+    border-top: 0px;
+    border-bottom: 1px;
+    border-bottom-color: #333;
+    padding-top: 5px;
+}
+
+.center
+{
+    text-align: center;
+}
+.topbar
+{
+    height: 60px;
+    background: #696969;
+    padding-top: 20px;
+    font: bold 40px arial;
+    color: #fff;
+}
+.tdCity
+{
+    width: 20%;
+    background: #efefef;
+    padding: 10px;
+    min-height: 300px;
+}
+.tdWeather
+{
+    padding: 10px;
+    vertical-align: top;
+    width: 80%;
+}
+
+.searchTxt
+{
+    border: 1px solid #ccc;
+}
+.searchCitys
+{
+    padding: 25px 5px 5px 0px;
+    font-size: 14px;
+    cursor:pointer;
+}
+.searchCitys div
+{
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+    padding: 10px 0 10px 20px;
+    background: #fff;
+}
+.cityWeather
+{
+    border: 1px solid #ddd;
+    padding: 30px 20px 20px 20px;
+}
+
+.cityWeather div
+{
+    padding: 5px;
+}
+
+.lWeather td
+{
+    width: 20%;
+    border: 1px solid #ccc;
+}
+
+#forecast1, #forecast2, #forecast3, #forecast4, #forecast5
+{
+    background: #4169E1;
+    margin:10px;
+    font-size:10px;
+    padding:8px;
+    line-height:2.0;
+    color:#fff;
+    border-radius: 3px;
+}
+
+button
+{
+    border-radius: 0px 5px 5px 0px;
+    background-color: #fff;
+    border: 1px solid #999;
+}
+button img
+{
+    width: 40px;
+    height: 40px;
+}
+
+header
+{
+    border-bottom-width: 10px;
+    text-color: red;
+    background: #efefef;
+}
+
+button
+{
+    font-size: 2em;
+}

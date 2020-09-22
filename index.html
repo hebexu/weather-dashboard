@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <!-- key:6e5f6b7d879d78a11f873cfcdae38118 -->
+    <div class="topbar center">
+        Weather Dashboard</div>
+    <div class="container">
+        <table style="100%">
+            <tr>
+                <td class="tdCity">
+                    <div style="min-height: 400px;">
+                        <div>
+                            Search for a City</div>
+                        <div>
+                            <input type="text" class="searchTxt" />
+                            <input type="button" value="Go" onclick="GetWeather()" /></div>
+                        <div class="searchCitys">  
+                        </div>
+                    </div>
+                </td>
+                <td class="tdWeather">
+                    <div class="cityWeather">
+                        <div class="city">
+                        </div>
+                        <div class="latlon"></div>
+                        <div class="wind">
+                        </div>
+                        <div class="humidity">
+                        </div>
+                        <div class="temp">
+                        </div>
+                        <input type="hidden" id="lon" />
+                        <input type="hidden" id="lat" />
+                    </div>
+                    <div  style="margin-top: 20px">
+                    <div>5-Day Forcast:</div>
+                        <table id="lWeather" style="width:100%">
+                        <tr>
+                        <td>
+                        <div id="forecast1">
+                        
+                        </div>
+                        </td>
+                        <td><div id="forecast2">
+                        2
+                        </div></td>
+                        <td><div id="forecast3">
+                        3
+                        </div></td>
+                        <td><div id="forecast4">
+                        4
+                        </div></td>
+                        <td><div id="forecast5">
+                        5
+                        </div></td>
+                        </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="container-fluid">
+        <footer class="row">
+      <br><br>
+    </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--<script>src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es-us.js"</script>-->
+    <script src="script.js"></script>
+</body>
+</html>
