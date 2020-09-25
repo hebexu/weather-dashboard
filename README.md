@@ -2,7 +2,7 @@
 
 1. Project Introduction:
 
-This page will help users to search the city weather information which includes wind speed, humidity, temperature as well as UV number, it will also generate 5 days forecast in the page. All searched information will be kept in the page and saved to localstorage.  
+This page will help users to search the city weather information which includes wind speed, humidity, temperature as well as UV number, it will also generate 5 days forecast in the page. All searched information will be listed in the page and saved to localstorage.  
 The date of development: 25th Sep, 2020.
 Developer: Hebe
 
