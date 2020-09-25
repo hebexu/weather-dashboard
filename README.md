@@ -2,17 +2,27 @@
 
 1. Project Introduction:
 
-This page will help users to create daily work schedule, they can write down and modify their schedule details between working hours from 8am to 5pm. All text details could be saved to local storage after clicking the "tick" button.
-The date of development: 19th Sep, 2020.
+This page will help users to search the city weather information which includes wind speed, humidity, temperature as well as UV number, it will also generate 5 days forecast in the page. All searched information will keep in the page and save to localstorage.  
+The date of development: 25th Sep, 2020.
 Developer: Hebe
 
 2. Project coding introduction:
 
-The project includes 3 source files: index.html is responsible for user interface and communication operation; script.js is responsible for inputting content to the schedule and save to local storage. style.css is responsible for the display style of HTML. index.html will call script.js file and sytle.css file.
+The project includes 3 source files: index.html is responsible for user interface and communication operation; script.js is responsible for get weather information and save to local storage. style.css is responsible for the display style of HTML. index.html will call script.js file and sytle.css file.
 
 3. Workday schedule implementation introduction:
 
-script.js is responsible for the introduction of main functions of initializing the local storage, updating calendar tasks and saving to local storage. Below main functions have been adopted:
+script.js is responsible for using jQuery functions to get the weather data ,  initializing local storage, saving data to localstorage as well as displaying data to the page from local storage. Below main functions have been adopted:
+
+function GetWeather()
+function GetWeatherByName(cityname)
+function GetForecastWeather()
+function UpdateNowTime()
+function loadCorrectDataset()
+function initializeLocalStorage()
+function saveToLocalStorage(dayObj)
+function saveSchedule(hourString, val)
+function updateList(dayObject)
 
 <p><li>InitializeLocalStorage() function;</li>
 <li>SaveToLocalStorage() function;</li>
