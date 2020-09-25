@@ -12,7 +12,7 @@ The project includes 3 source files: index.html is responsible for user interfac
 
 3. Weather-Dashboard implementation introduction:
 
-script.js is responsible for using jQuery functions to get the weather data ,  initializing local storage, saving data to localstorage as well as displaying data to the page from local storage. Below main functions have been adopted:
+script.js is responsible for using jQuery functions and API to get the weather data ,  initializing local storage, saving data to localstorage as well as displaying data to the page from local storage. Below main functions have been adopted:
 
 <p><li>function GetWeather()</li>
 <li>function GetWeatherByName(cityname)</li>
