@@ -15,9 +15,9 @@ var weathCity = {
   
   GetWeather("Adelaide");
     if(!localStorage.getItem('weathCity')) {
-      updateCalendarTasks(weathCity);
+      updateList(weathCity);
     } else {
-      updateCalendarTasks(JSON.parse(localStorage.getItem('weathCity')));
+      updateList(JSON.parse(localStorage.getItem('weathCity')));
     }
   
   })
@@ -44,10 +44,7 @@ var weathCity = {
         method: "GET"
       }).then(function(response) {
            
-        // Create CODE HERE to Log the queryURL
-        //console.log(queryURL);
-        // Create CODE HERE to log the resulting object
-        
+  
         // Create CODE HERE to calculate the temperature (converted from Kelvin)// Create CODE HERE to transfer content to HTML
         $(".city").html("<h1>" + response.name + "<span> Weather Details</span></h1>");
         $(".wind").html("Wind Speed:" + response.wind.speed);
@@ -67,10 +64,7 @@ var weathCity = {
         
         saveSchedule(response.name,"");
         GetForecastWeather();
-        //$(".rain").html("Rain for 3h:" + response.rain.3h);
-        // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
-        // Create CODE HERE to dump the temperature content into HTML
-  
+        
       }).fail(function(ff){alert("City not found!");});
   
   
@@ -88,33 +82,15 @@ var weathCity = {
         method: "GET"
       }).then(function(response) {
            
-        // Create CODE HERE to Log the queryURL
-        //console.log(queryURL);
-        // Create CODE HERE to log the resulting object
   
         var today = moment().add(1,"days").format('DD/MM/YYYY');
-        // Create CODE HERE to calculate the temperature (converted from Kelvin)// Create CODE HERE to transfer content to HTML
+  
         for (var i=1;i<6;i++)
         {
           $("#forecast"+i).html("<div>"+moment().add(i,"days").format('DD/MM/YYYY')+"<br />"+response.daily[i].weather[0].main+" <br /><br />Temp: "+ response.daily[i].temp.day + "<br />Humidity: "+response.daily[i].humidity+"</div>");
         }
   
-   //var dt = response.current.dt;
-  // alert(response.daily[0].dt);response.daily[3].dt
-   var dd = moment().utc("1601173800").format('YYYY-MM-DD hh:mm:ss');
-  
-   //var date =new Date(dt);
-   //alert(date.getFullYear());
-   //var d = moment.duration(response.daily[0].dt, 'milliseconds');
-   // alert(d);
-  //var hours = d.format("YYYY-MM-DD HH:mm:ss");
-  
-  
-   
-        //$(".rain").html("Rain for 3h:" + response.rain.3h);
-        // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
-        // Create CODE HERE to dump the temperature content into HTML
-  
+         
       });
   }
   
@@ -122,34 +98,6 @@ var weathCity = {
   function UpdateNowTime()
   {
       $('#date-today h6').text(moment().format('dddd') + ", " + moment().format('MMMM Do YYYY, h:mm:ss a'));
-  }
-  
-    // ���ݵ�ǰʱ�䣬�ı�ҳ���ϲ�ͬʱ�ε��е�css��ʽ����ʵ�Ƕ�Ӧ��demo�￴���Ĳ�ͬʱ���б���ɫ��һ����
-  var counter = 1;
-  for(const property in weathCity) {
-    var textEntry = "#text-entry" + counter;
-    $(textEntry).text(weathCity[property]);
-    var timeId = "#time" + counter;
-    var presentHour = moment().hour();
-    
-    var timeString = $(timeId).text();
-    var timeNumber = hourNumberFromHourString(timeString);  
-    if(timeNumber < presentHour) {
-      $(textEntry).addClass("past-hour");
-    } else if (timeNumber > presentHour) {
-      $(textEntry).addClass("future-hour");
-    } else {
-      $(textEntry).addClass("present-hour");
-    }
-    counter ++;
-  }
-  
-    // �����д��task�� ������button����������ݵ����ش洢localStorage��
-  function saveCal(nid)
-  {
-    value = $("#text-entry"+nid).val();
-    hourString = $("#time"+nid).text().trim();
-    saveSchedule(hourString, value);
   }
   
   
@@ -182,4 +130,25 @@ var weathCity = {
     weathCity[hourString] = val;
   
     saveToLocalStorage(workHours);
+  }
+  
+    
+    // �޸�ҳ���ϵ�cal����
+  function updateList(dayObject) {
+  
+   for (var c in dayObject)
+   {
+    if (c.trim()!="")
+    {
+    weathCity[c.trim()] = "";
+    $(".searchCitys").html("<div>"+c.trim()+"</div>"+$(".searchCitys").html());
+    }
+   }
+  
+   $(".searchCitys").children("div").each(function(index) {
+  
+   $(this).click(function(){
+   GetWeatherByName($(this).html())});
+  
+  });
   }
