@@ -14,20 +14,15 @@ The project includes 3 source files: index.html is responsible for user interfac
 
 script.js is responsible for using jQuery functions to get the weather data ,  initializing local storage, saving data to localstorage as well as displaying data to the page from local storage. Below main functions have been adopted:
 
-function GetWeather()
-function GetWeatherByName(cityname)
-function GetForecastWeather()
-function UpdateNowTime()
-function loadCorrectDataset()
-function initializeLocalStorage()
-function saveToLocalStorage(dayObj)
-function saveSchedule(hourString, val)
-function updateList(dayObject)
-
-<p><li>InitializeLocalStorage() function;</li>
-<li>SaveToLocalStorage() function;</li>
-<li>SaveSchedule() function;</li>
-<li>UpdateCalendarTasks() function;</li></p>
+<p><li>function GetWeather()</li>
+<li>function GetWeatherByName(cityname)</li>
+<li>function GetForecastWeather()</li>
+<li>function UpdateNowTime()</li>
+<li>function loadCorrectDataset()</li>
+<li>function initializeLocalStorage()</li>
+<li>function saveToLocalStorage(dayObj)</li>
+<li>function saveSchedule(hourString, val)</li>
+<li>function updateList(dayObject)</li></p>
 
 <p>The URL of the deployed application.
 https://hebexu.github.io/weather-dashboard/</p>
