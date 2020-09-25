@@ -1,5 +1,4 @@
 # weather-dashboard
-<h1>Weather-dashboard</h1>
 
 1. Project Introduction:
 
