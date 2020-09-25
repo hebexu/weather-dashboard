@@ -10,7 +10,7 @@ Developer: Hebe
 
 The project includes 3 source files: index.html is responsible for user interface and communication operation; script.js is responsible for get weather information and save to local storage. style.css is responsible for the display style of HTML. index.html will call script.js file and sytle.css file.
 
-3. Workday schedule implementation introduction:
+3. Weather-Dashboard implementation introduction:
 
 script.js is responsible for using jQuery functions to get the weather data ,  initializing local storage, saving data to localstorage as well as displaying data to the page from local storage. Below main functions have been adopted:
 
