@@ -7,8 +7,8 @@ var weathCity = {
       // Here we are building the URL we need to query the database
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey+"&q=";
   
-    // Using jQuery call ready function automatically after loding the page; 
-    // Using localStorage to save tasks是浏览器的本地存储单元， 保存了在页面里写的那些 task
+    // jQuery 里的方法， 在页面加载完成时，会自动调用 ready 函数
+    // localStorage 是浏览器的本地存储单元， 保存了在页面里写的那些 task
     // 这个方法， 把保存在 localStorage 里的 task 文字， 填在页面上
   $(document).ready(function(){
   loadCorrectDataset();
@@ -47,29 +47,49 @@ var weathCity = {
   
         // Create CODE HERE to calculate the temperature (converted from Kelvin)// Create CODE HERE to transfer content to HTML
         $(".city").html("<h1>" + response.name + "<span> Weather Details</span></h1>");
-        $(".wind").html("Wind Speed:" + response.wind.speed);
+        $(".temp").html("Temperature (F):" + response.main.temp);
         $(".wind").html("Wind Speed:" + response.wind.speed);
         $(".humidity").html("Humidity:" + response.main.humidity);
-        $(".temp").html("Temperature (F):" + response.main.temp);
-        $(".latlon").html("Lat:" + response.coord.lat+", Lon:"+response.coord.lon);
+      //  $(".latlon").html("Lat:" + response.coord.lat+", Lon:"+response.coord.lon);
   
   
-        $("#lon").val(response.coord.lon);// = response.coord.lon;
-        $("#lat").val(response.coord.lat);// = response.coord.lat;
+        $("#lon").val(response.coord.lon);
+        $("#lat").val(response.coord.lat);
   
   
         if (weathCity[response.name] != "")
         $(".searchCitys").html("<div>"+response.name+"</div>"+$(".searchCitys").html());
         
-        
+  
+        // 保存当前查询的城市到左侧列表
         saveSchedule(response.name,"");
+  
+        // 获取紫外线值
+        GetUVNum($("#lat").val(),$("#lon").val())
+  
+        // 获取5天天气预测
         GetForecastWeather();
         
       }).fail(function(ff){alert("City not found!");});
   
   
+  
+      
+  
   }
   
+  function GetUVNum(lat,lon)
+  {
+      var UVurl = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&lon="+lon+"&appid="+APIKey;
+      // 查询紫外线
+      $.ajax({
+        url: UVurl,
+        method: "GET"
+      }).then(function(response) {
+  
+      $(".UVNum").html("UV:" + response.value);
+      })
+  }
   
   function GetForecastWeather()
   {
