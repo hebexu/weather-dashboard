@@ -1,5 +1,5 @@
 # weather-dashboard
-<h1>Workday Schedule</h1>
+<h1>Weather-dashboard</h1>
 
 1. Project Introduction:
 
